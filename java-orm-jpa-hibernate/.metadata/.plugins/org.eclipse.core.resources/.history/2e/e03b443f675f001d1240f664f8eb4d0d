@@ -1,0 +1,7 @@
+package com.godoro.jpareal;
+
+public class Supplier {
+	private long supplierId;
+	private String supplierName;
+	private double totalCredit;
+}

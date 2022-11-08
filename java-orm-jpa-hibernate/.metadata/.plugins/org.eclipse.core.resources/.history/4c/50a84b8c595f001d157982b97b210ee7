@@ -1,0 +1,5 @@
+package com.godoro.human.entity;
+
+public class Employee {
+
+}

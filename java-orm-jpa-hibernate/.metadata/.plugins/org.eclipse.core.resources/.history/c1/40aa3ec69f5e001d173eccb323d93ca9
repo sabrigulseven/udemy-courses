@@ -1,0 +1,5 @@
+package com.godoro.inventory.entity;
+
+public class Product {
+
+}

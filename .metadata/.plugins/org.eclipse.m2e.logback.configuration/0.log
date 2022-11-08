@@ -1,0 +1,10 @@
+2022-11-07 14:33:32,461 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-11-07 14:36:51,224 [Worker-22: Creating project "1"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: 1:1:0.0.1-SNAPSHOT @ C:\Users\Sabri\Desktop\udemy-course\1\pom.xml.
+2022-11-07 14:36:52,118 [Worker-22: Creating project "1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /1/src/main/java
+2022-11-07 14:36:52,120 [Worker-22: Creating project "1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /1/src/main/resources
+2022-11-07 14:36:52,121 [Worker-22: Creating project "1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /1/src/test/java
+2022-11-07 14:36:52,122 [Worker-22: Creating project "1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /1/src/test/resources
+2022-11-07 14:36:53,133 [Worker-24: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1254 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-07 14:36:53,139 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-07 14:36:53,141 [Worker-24: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1254 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-07 14:36:53,143 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
