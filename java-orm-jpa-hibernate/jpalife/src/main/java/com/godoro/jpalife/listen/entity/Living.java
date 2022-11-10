@@ -3,12 +3,14 @@ package com.godoro.jpalife.listen.entity;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 
 @Entity
+@EntityListeners({ LivingListener.class })
 public class Living {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
