@@ -7,9 +7,9 @@
 	<persistence-unit name="MyPersistenceUnit">
 
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>com.godoro.jpareal.Customer</class>
-		<class>com.godoro.jpareal.Supplier</class>
-		
+		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+
+
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />
@@ -21,6 +21,10 @@
 			<property
 				name="javax.persistence.schema-generation.database.action"
 				value="update" />
+			<property name="hibernate.cache.use_second_level_cache"
+				value="true" />
+			<property name="hibernate.cache.region.factory_class"
+				value="org.hibernate.cache.ehcache.EhCacheRegionFactory" />
 		</properties>
 
 	</persistence-unit>
