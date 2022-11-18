@@ -1,4 +1,4 @@
-package com.godorocdiexample.name;
+package com.godoro.cdiexample.name;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
