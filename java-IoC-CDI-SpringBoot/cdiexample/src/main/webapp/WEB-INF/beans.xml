@@ -25,5 +25,7 @@
         </alternatives>
         <interceptors>
         	<class>com.godoro.cdiexample.interceptor.MyTraceInterceptor</class>
+        	<class>com.godoro.cdiexample.interceptor.multiple.MyCountInterceptorAscending</class>
+        	<class>com.godoro.cdiexample.interceptor.multiple.MyCountInterceptorDescending</class>
         </interceptors>
 </beans>
