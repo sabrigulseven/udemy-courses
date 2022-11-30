@@ -23,4 +23,7 @@
         <alternatives>
         	<class>com.godoro.cdiexample.alternative.MyChoiceImpTwo</class>
         </alternatives>
+        <interceptors>
+        	<class>com.godoro.cdiexample.interceptor.MyTraceInterceptor</class>
+        </interceptors>
 </beans>
