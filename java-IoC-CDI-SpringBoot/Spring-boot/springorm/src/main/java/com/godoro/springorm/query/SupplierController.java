@@ -30,12 +30,8 @@ public class SupplierController {
 	@GetMapping("/supplier/findAll")
 	@ResponseBody
 	public String findSuppliers() {
-		StringBuilder stringBuilder = new StringBuilder();
 		Iterable<Supplier> supplierList = supplierRepository.findAll();
-		for (Supplier supplier : supplierList) {
-			stringBuilder.append(supplier).append("\n");
-		}
-		return stringBuilder.toString();
+		return supplierWriter(supplierList);
 	}
 
 	@GetMapping("/supplier/findByName/{name}")

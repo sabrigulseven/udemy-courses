@@ -10,4 +10,5 @@ public interface SupplierRepository extends CrudRepository<Supplier, Long>, Cust
 
 	@Query("select s from Supplier s where s.supplierName= :supplierName")
 	List<Supplier> findSuppliersByName(@Param("supplierName") String supplierName);
+	
 }
