@@ -21,8 +21,8 @@ public class PlayerResource {
 		return player;
 	}
 	
-	@GetMapping("/sports/player")
-	public List<Player> getPlayer() {
+	@GetMapping("/sports/players")
+	public List<Player> getPlayers() {
 		
 		List<Player> playerList = new ArrayList<>();
 		playerList.add(new Player(801, "Orhan GEncebay", 12.34)) ;
