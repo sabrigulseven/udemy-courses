@@ -51,7 +51,7 @@ public class PlayerController {
 		for (Player player : playerList) {
 			System.out.println(player);
 		}
-		return "Oyuncu alındı: " + playerList.size();
+		return playerList.size()+" Oyuncu JSON olarak alındı: ";
 	}
 
 	@GetMapping("/client/send")
@@ -93,5 +93,20 @@ public class PlayerController {
 				Void.class);
 		
 		return "Oyuncu Silindi. ";
+	}
+	
+	@GetMapping("/client/xplayers")
+	@ResponseBody
+	public String getPlayersXml() {
+		String url = "http://localhost:8080/sports/xplayers/";
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<List<Player>> responseEntity = restTemplate.exchange(url, HttpMethod.GET, HttpEntity.EMPTY,
+				new ParameterizedTypeReference<List<Player>>() {
+				});
+		List<Player> playerList = responseEntity.getBody();
+		for (Player player : playerList) {
+			System.out.println(player);
+		}
+		return playerList.size()+" Oyuncu Xml olarak alındı: " ;
 	}
 }
