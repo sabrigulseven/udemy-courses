@@ -1,4 +1,4 @@
-package com.godoro.springrest.sports.service;
+package com.godoro.springrest.data;
 
 public class Player {
 
