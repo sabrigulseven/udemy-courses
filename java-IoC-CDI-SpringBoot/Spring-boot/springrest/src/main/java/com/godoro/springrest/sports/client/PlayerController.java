@@ -69,5 +69,29 @@ public class PlayerController {
 		Player resultPlayer = responseEntity.getBody();
 		return "Yollandı" + resultPlayer;
 	}
+	@GetMapping("/client/change")
+	@ResponseBody
+	public String changePlayer(@RequestParam(name = "name") String playerName,
+			@RequestParam(name = "score") double averageScore) {
+		Player player = new Player(0, playerName, averageScore);
+		String url = "http://localhost:8080/sports/player";
+		RestTemplate restTemplate = new RestTemplate();
 
+		ResponseEntity<Boolean> responseEntity = restTemplate.exchange(url, HttpMethod.PUT,
+				new HttpEntity<Player>(player), Boolean.class);
+		Boolean result = responseEntity.getBody();
+		
+		return "Koyuldu: " + result;
+	}
+	
+	@GetMapping("/client/delete/{id}")
+	@ResponseBody
+	public String deletePlayer(@PathVariable("id") long playerId) {
+		String url = "http://localhost:8080/sports/delete/" + playerId;
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.exchange(url, HttpMethod.DELETE, HttpEntity.EMPTY,
+				Void.class);
+		
+		return "Oyuncu Silindi. ";
+	}
 }
