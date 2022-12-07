@@ -16,6 +16,6 @@ public interface EmployeeRepositoy extends CrudRepository<Employee, Long> {
 	public List<Employee> findByDepartment(@Param("departmentId") long departmentId);
 	
 	@Query("select count(e.employeeId) from Employee e where e.department.departmentId =:departmentId")
-	public long countByDepartment(long departmentId);
+	public int countByDepartment(long departmentId);
 	
 }
