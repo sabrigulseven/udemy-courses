@@ -5,5 +5,6 @@ import com.godoro.springcomplex.bussiness.dto.DepartmentSummary;
 public interface DepartmentService {
 
 	public DepartmentSummary list();
-
+	
+	public long generateDepartment(String departmentName);
 }
