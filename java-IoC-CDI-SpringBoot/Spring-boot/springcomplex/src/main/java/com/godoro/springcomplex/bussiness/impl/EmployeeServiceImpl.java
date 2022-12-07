@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.godoro.springcomplex.bussiness.dto.EmployeeDetail;
-import com.godoro.springcomplex.bussiness.dto.EmployeeSumarry;
+import com.godoro.springcomplex.bussiness.dto.EmployeeSummary;
 import com.godoro.springcomplex.bussiness.service.EmployeeService;
 import com.godoro.springcomplex.data.entity.Department;
 import com.godoro.springcomplex.data.entity.Employee;
@@ -28,7 +28,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 		Employee employee = toEntity(employeeDetail);
 		employeeRepositoy.save(employee);
 		employeeDetail.setEmployeeId(employee.getEmployeeId());
-
+		if (employeeDetail.getDepartmentId()>0) {
+			Optional<Department> department = departmentRepository.findById(employeeDetail.getDepartmentId());
+			if (department.isPresent()) {
+				employeeDetail.setDepartmentName(department.get().getDepartmentName());
+			}
+		}
 	}
 
 	@Override
@@ -49,8 +54,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public EmployeeSumarry list() {
-		EmployeeSumarry employeeSumary = new EmployeeSumarry();
+	public EmployeeSummary list() {
+		EmployeeSummary employeeSumary = new EmployeeSummary();
 		employeeSumary.setEmployeeDetailList(new ArrayList<>());
 		for (Employee employee : employeeRepositoy.findAll()) {
 			EmployeeDetail employeeDetail = toDto(employee);
@@ -60,8 +65,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public EmployeeSumarry listByDepartment(long departmentId) {
-		EmployeeSumarry employeeSumary = new EmployeeSumarry();
+	public EmployeeSummary listByDepartment(long departmentId) {
+		EmployeeSummary employeeSumary = new EmployeeSummary();
+		employeeSumary.setEmployeeDetailList(new ArrayList<>());
 		Optional<Department> department = departmentRepository.findById(departmentId);
 		if (department.isPresent()) {
 			employeeSumary.setDepartmentId(department.get().getDepartmentId());
@@ -85,11 +91,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employee.setEmployeeId(employeeDetail.getEmployeeId());
 		employee.setEmployeeName(employeeDetail.getEmployeeName());
 		employee.setMonthlySalary(employeeDetail.getMonthlySalary());
-		if (employeeDetail.getDepartmentId() == 0) {
 			Optional<Department> department = departmentRepository.findById(employeeDetail.getDepartmentId());
 			if (department.isPresent()) {
 				employee.setDepartment(department.get());
-			}
+			
 		}
 
 		return employee;

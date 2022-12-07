@@ -1,7 +1,7 @@
 package com.godoro.springcomplex.bussiness.service;
 
 import com.godoro.springcomplex.bussiness.dto.EmployeeDetail;
-import com.godoro.springcomplex.bussiness.dto.EmployeeSumarry;
+import com.godoro.springcomplex.bussiness.dto.EmployeeSummary;
 
 public interface EmployeeService {
 
@@ -11,9 +11,9 @@ public interface EmployeeService {
 
 	public EmployeeDetail find(long employeeId);
 
-	public EmployeeSumarry list();
+	public EmployeeSummary list();
 
-	public EmployeeSumarry listByDepartment(long departmentId);
+	public EmployeeSummary listByDepartment(long departmentId);
 
 	public int countByDepartment(long departmentId);
 

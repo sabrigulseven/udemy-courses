@@ -14,7 +14,7 @@
 	<br> Çalýþan Özdeþliði: ${employee.employeeId}
 	<br> Çalýþan Adý: ${employee.employeeName}
 	<br> Aylýk Maaþý: ${employee.monthlySalary}
-	<br>
+	<br> Çalýþtýðý Departman: ${employee.departmentName}
 
 	<br>
 	<a href="<c:url value="/employee/list"></c:url>">Çalýþanlar</a>
