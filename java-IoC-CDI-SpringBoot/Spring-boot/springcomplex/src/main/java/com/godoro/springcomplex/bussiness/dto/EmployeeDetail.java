@@ -1,4 +1,4 @@
-package com.godoro.springcomplexbussiness.dto;
+package com.godoro.springcomplex.bussiness.dto;
 
 public class EmployeeDetail {
 

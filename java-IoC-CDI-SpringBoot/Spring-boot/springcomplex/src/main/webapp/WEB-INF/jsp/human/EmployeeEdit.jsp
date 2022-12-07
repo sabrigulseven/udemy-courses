@@ -5,28 +5,28 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Product Edit</title>
+<title>Employee Edit</title>
 </head>
 <body>
 
-	<form:form method="post" modelAttribute="product">
+	<form:form method="post" modelAttribute="employee">
 	<form:errors/>
-	<form:hidden path="productId"/>
+	<form:hidden path="employeeId"/>
 		<fieldset class="form-group">
-			<form:label path="productId">Ürün Özdeşliği</form:label>
-			<form:input path="productId" type="text" disabled="true"/>
-			<form:errors path="productId"/>
+			<form:label path="employeeId">Çalışan Özdeşliği</form:label>
+			<form:input path="employeeId" type="text" disabled="true"/>
+			<form:errors path="employeeId"/>
 			
 		</fieldset >
 		<fieldset class="form-group">
-			<form:label path="productName">Ürün Adı</form:label>
-			<form:input path="productName" type="text" />
-			<form:errors path="productName"/>
+			<form:label path="employeeName">Çalışan Adı</form:label>
+			<form:input path="employeeName" type="text" />
+			<form:errors path="employeeName"/>
 		</fieldset >
 		<fieldset class="form-group">
-			<form:label path="salesPrice">Satış Fiyatı</form:label>
-			<form:input path="salesPrice" type="text" />
-			<form:errors path="salesPrice"/>
+			<form:label path="monthlySalary">Aylık Maaşı</form:label>
+			<form:input path="monthlySalary" type="text" />
+			<form:errors path="monthlySalary"/>
 			
 		</fieldset>
 		<button type="submit" >Sakla</button>

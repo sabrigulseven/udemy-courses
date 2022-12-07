@@ -1,17 +1,18 @@
-package com.godoro.springcomplexbussiness.impl;
+ package com.godoro.springcomplex.bussiness.impl;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.godoro.springcomplex.bussiness.dto.EmployeeDetail;
+import com.godoro.springcomplex.bussiness.dto.EmployeeSumarry;
+import com.godoro.springcomplex.bussiness.service.EmployeeService;
 import com.godoro.springcomplex.data.entity.Department;
 import com.godoro.springcomplex.data.entity.Employee;
 import com.godoro.springcomplex.data.repositoy.DepartmentRepository;
 import com.godoro.springcomplex.data.repositoy.EmployeeRepositoy;
-import com.godoro.springcomplexbussiness.dto.EmployeeDetail;
-import com.godoro.springcomplexbussiness.dto.EmployeeSumary;
-import com.godoro.springcomplexbussiness.service.EmployeeService;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -22,18 +23,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	private DepartmentRepository departmentRepository;
 
 	@Override
-	public void create(EmployeeDetail employeeDetail) {
+	public void save(EmployeeDetail employeeDetail) {
 
 		Employee employee = toEntity(employeeDetail);
 		employeeRepositoy.save(employee);
-		employee.setEmployeeId(employee.getEmployeeId());
+		employeeDetail.setEmployeeId(employee.getEmployeeId());
 
-	}
-
-	@Override
-	public void update(EmployeeDetail employeeDetail) {
-		Employee employee = toEntity(employeeDetail);
-		employeeRepositoy.save(employee);
 	}
 
 	@Override
@@ -54,8 +49,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public EmployeeSumary list() {
-		EmployeeSumary employeeSumary = new EmployeeSumary();
+	public EmployeeSumarry list() {
+		EmployeeSumarry employeeSumary = new EmployeeSumarry();
+		employeeSumary.setEmployeeDetailList(new ArrayList<>());
 		for (Employee employee : employeeRepositoy.findAll()) {
 			EmployeeDetail employeeDetail = toDto(employee);
 			employeeSumary.getEmployeeDetailList().add(employeeDetail);
@@ -64,8 +60,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public EmployeeSumary listByDepartment(long departmentId) {
-		EmployeeSumary employeeSumary = new EmployeeSumary();
+	public EmployeeSumarry listByDepartment(long departmentId) {
+		EmployeeSumarry employeeSumary = new EmployeeSumarry();
 		Optional<Department> department = departmentRepository.findById(departmentId);
 		if (department.isPresent()) {
 			employeeSumary.setDepartmentId(department.get().getDepartmentId());

@@ -1,22 +1,20 @@
-package com.godoro.springcomplexbussiness.service;
+package com.godoro.springcomplex.bussiness.service;
 
-import com.godoro.springcomplexbussiness.dto.EmployeeDetail;
-import com.godoro.springcomplexbussiness.dto.EmployeeSumary;
+import com.godoro.springcomplex.bussiness.dto.EmployeeDetail;
+import com.godoro.springcomplex.bussiness.dto.EmployeeSumarry;
 
 public interface EmployeeService {
-	
-	public void create(EmployeeDetail employeeDetail);
-	
-	public void update(EmployeeDetail employeeDetail);
-	
+
+	public void save(EmployeeDetail employeeDetail);
+
 	public void delete(long employeeId);
-	
+
 	public EmployeeDetail find(long employeeId);
 
-	public EmployeeSumary list();
-	
-	public EmployeeSumary listByDepartment(long departmentId);
-	
+	public EmployeeSumarry list();
+
+	public EmployeeSumarry listByDepartment(long departmentId);
+
 	public int countByDepartment(long departmentId);
 
 }

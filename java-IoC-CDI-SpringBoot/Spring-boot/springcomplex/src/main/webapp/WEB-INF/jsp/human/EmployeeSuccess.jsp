@@ -6,17 +6,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-9">
-<title>Product Success</title>
+<title>Employee Success</title>
 </head>
 <body>
 	${message}
 	<br>
-	<br> Ürün Özdeşliği: ${product.productId}
-	<br> Ürün Adı: ${product.productName}
-	<br> Satış Fiyatı: ${product.salesPrice}
+	<br> Çalışan Özdeşliği: ${employee.employeeId}
+	<br> Çalışan Adı: ${employee.employeeName}
+	<br> Aylık Maaşı: ${employee.monthlySalary}
 	<br>
 
 	<br>
-	<a href="<c:url value="/product/list"></c:url>">Ürün Listesi</a>
+	<a href="<c:url value="/employee/list"></c:url>">Çalışanlar</a>
 </body>
 </html>

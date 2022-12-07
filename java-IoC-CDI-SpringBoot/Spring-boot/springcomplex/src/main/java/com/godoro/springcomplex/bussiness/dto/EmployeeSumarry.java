@@ -1,8 +1,8 @@
-package com.godoro.springcomplexbussiness.dto;
+package com.godoro.springcomplex.bussiness.dto;
 
 import java.util.List;
 
-public class EmployeeSumary {
+public class EmployeeSumarry {
 	private int employeeCount;
 	private long departmentId;
 	private String departmentName;

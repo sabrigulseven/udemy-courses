@@ -5,24 +5,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-9">
-<title>Insert title here</title>
+<title>Employee List</title>
 </head>
 <body>
 	${message}
 	<br>
 	<br>
 	<table border="1">
-		<c:forEach var="product" items="${products}">
+		<c:forEach var="employee" items="${employees.employeeDetailList}">
 			<tr>
-				<td>${product.productId}</td>
-				<td>${product.productName}</td>
-				<td>${product.salesPrice}</td>
-				<td><a href="<c:url value="/product/edit/${product.productId}"></c:url>">Güncelle</a></td>
-				<td><a href="<c:url value="/product/delete/${product.productId}"></c:url>">Sil</a></td>
+				<td>${employee.employeeId}</td>
+				<td>${employee.employeeName}</td>
+				<td>${employee.monthlySalary}</td>
+				<td><a href="<c:url value="/employee/edit/${employee.employeeId}"></c:url>">Güncelle</a></td>
+				<td><a href="<c:url value="/employee/delete/${employee.employeeId}"></c:url>">Sil</a></td>
 			</tr>
 		</c:forEach>
 	</table>
 	<br>
-	<a href="<c:url value="/product/edit"></c:url>">Ekle</a>
+	<a href="<c:url value="/employee/edit"></c:url>">Ekle</a>
 </body>
 </html>
