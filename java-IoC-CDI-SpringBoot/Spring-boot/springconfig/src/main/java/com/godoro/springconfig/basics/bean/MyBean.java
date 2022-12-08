@@ -38,7 +38,13 @@ public class MyBean {
 	public void setMyDouble(double myDouble) {
 		this.myDouble = myDouble;
 	}
-
+	public void initializeBean() {
+		System.out.println("Başlatılıyor..");
+	}
+	
+	public void finalizeBean() {
+		System.out.println("Sonlandırılıyor..");
+	}
 	@Override
 	public String toString() {
 		return "{" +

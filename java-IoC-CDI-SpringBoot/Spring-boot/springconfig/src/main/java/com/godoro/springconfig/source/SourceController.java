@@ -11,11 +11,21 @@ import com.godoro.springconfig.basics.bean.MyBean;
 public class SourceController {
 	@Autowired
 	private MyBean myBean;
-	
+
+	@Autowired
+	private MyBean myAnotherBean;
+
 	@GetMapping("/source/bean")
 	@ResponseBody
 	public String getBean() {
-		
+
 		return "Çekirdek " + myBean;
+	}
+
+	@GetMapping("/source/scope")
+	@ResponseBody
+	public String getScope() {
+
+		return "Kapsam " + myBean.hashCode() +" ==? "+ myAnotherBean.hashCode();
 	}
 }
