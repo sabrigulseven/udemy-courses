@@ -19,10 +19,13 @@ public class SourceController {
 
 	@Autowired
 	private MyAgent myAgent;
-	
+
 	@Autowired
-	private	MySpec mySpec;
-	
+	private MySpec mySpec;
+
+	@Autowired
+	private CommerceProperties commerceProperties;
+
 	@GetMapping("/source/bean")
 	@ResponseBody
 	public String getBean() {
@@ -44,11 +47,20 @@ public class SourceController {
 		return "Kapsam " + myAgent.getAgentName() + "  " + myAgent.getMyBean().toString() + " / " + myBean.hashCode()
 				+ " ==? " + myAgent.getMyBean().hashCode();
 	}
-	
+
 	@GetMapping("/source/inversion")
 	@ResponseBody
 	public String getInversion() {
 
 		return "Evirtme >" + mySpec.myMethod("Girdi");
+	}
+
+	@GetMapping("/source/properties")
+	@ResponseBody
+	public String getProperties() {
+
+		return "Özellikler >" + commerceProperties.getSite() + " " + commerceProperties.getEmailAdress() + "Banka Adı:"
+				+ commerceProperties.getBank().getName() + "Ödeme Zamanı: "
+				+ commerceProperties.getBank().getPaymentTime();
 	}
 }
