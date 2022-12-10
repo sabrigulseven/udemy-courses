@@ -1,4 +1,4 @@
-package com.godoro.springconfig.source;
+package com.godoro.springconfig.basics.source;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;

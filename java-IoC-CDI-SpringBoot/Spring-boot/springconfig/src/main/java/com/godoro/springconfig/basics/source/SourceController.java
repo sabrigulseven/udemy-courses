@@ -1,4 +1,4 @@
-package com.godoro.springconfig.source;
+package com.godoro.springconfig.basics.source;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.godoro.springconfig.source;
+package com.godoro.springconfig.basics.source;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
