@@ -12,4 +12,11 @@
               <property name="myDouble" value="123.45"/>
        </bean>
 
+       <bean id="myAgent" class="com.godoro.springconfig.basics.bean.MyAgent">
+              <property name="agentName" value="Acente"/>
+              <property name="myBean" ref="myBean"/>
+       </bean>
+
+       <bean id="mySpec" class="com.godoro.springconfig.basics.bean.MySpecImpl">
+       </bean>
 </beans>
