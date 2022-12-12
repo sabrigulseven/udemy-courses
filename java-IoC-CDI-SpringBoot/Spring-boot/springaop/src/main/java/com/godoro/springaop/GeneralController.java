@@ -44,5 +44,12 @@ public class GeneralController {
 		String output = "-Denetleyici- " + purchaseService.anything(input);
 		return output;
 	}
+	
+	@GetMapping("aop/different/{in}")
+	@ResponseBody
+	public String getAnythingDifferent(@PathVariable("in") String input) {
+		String output = "-Denetleyici- " + purchaseService.processDifferent(input);
+		return output;
+	}
 
 }
