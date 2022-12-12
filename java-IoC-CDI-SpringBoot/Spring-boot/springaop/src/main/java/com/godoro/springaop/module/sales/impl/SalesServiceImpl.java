@@ -9,7 +9,9 @@ public class SalesServiceImpl implements SalesService{
 
 	@Override
 	public String performSomething(String input) {
-		
+		if (input.equals("Yanlış")) {
+			throw new IllegalArgumentException("Girdi yanlış");
+		}
 		return "Satış yap " + input;
 	}
 
