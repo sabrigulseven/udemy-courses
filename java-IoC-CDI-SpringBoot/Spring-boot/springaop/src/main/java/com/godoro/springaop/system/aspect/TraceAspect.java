@@ -12,6 +12,13 @@ public class TraceAspect {
 	@Before("execution(* com.godoro.springaop.module.sales.*.*(..))")
 	public void comingAll(JoinPoint joinPoint) {
 		System.out.println("ÖNCE tümü");
+		System.out.println("Uzun: "+joinPoint.toLongString());
+		System.out.println("Kısa: "+joinPoint.toShortString());
+		System.out.println();
+		for (Object arg : joinPoint.getArgs()) {
+			System.out.println(arg+": "+arg.getClass().getSimpleName());
+		}
+		System.out.println();
 	}
 	
 	@Before("execution(* com.godoro.springaop.module.sales.Sales*.*Something(String))")
