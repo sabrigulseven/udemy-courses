@@ -8,8 +8,20 @@ import org.springframework.context.annotation.Configuration;
 @Aspect
 @Configuration
 public class TraceAspect {
+	
 	@Before("execution(* com.godoro.springaop.module.sales.*.*(..))")
-	public void coming(JoinPoint joinPoint) {
-		System.out.println("ÖNCE");
+	public void comingAll(JoinPoint joinPoint) {
+		System.out.println("ÖNCE tümü");
 	}
+	
+	@Before("execution(* com.godoro.springaop.module.sales.Sales*.*Something(String))")
+	public void comingSomething(JoinPoint joinPoint) {
+		System.out.println("ÖNCE bir şey");
+	}
+	
+	@Before("execution(* com.godoro.springaop.module.sales.Sales*.handle*(..))")
+	public void comingHandle(JoinPoint joinPoint) {
+		System.out.println("ÖNCE kotar");
+	}
+	
 }

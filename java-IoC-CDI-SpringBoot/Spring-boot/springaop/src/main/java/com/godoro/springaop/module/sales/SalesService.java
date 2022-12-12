@@ -1,5 +1,8 @@
 package com.godoro.springaop.module.sales;
 
 public interface SalesService {
-	String performSamething(String input);
+	
+	String performSomething(String input);
+	String performAnother(String input);
+	String handleSomething(String input);
 }

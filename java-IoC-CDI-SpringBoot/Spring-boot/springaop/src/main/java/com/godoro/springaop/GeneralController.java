@@ -14,10 +14,24 @@ public class GeneralController {
 	@Autowired
 	private SalesService salesService;
 	
-	@GetMapping("aop/sales/{in}")
+	@GetMapping("aop/something/{in}")
 	@ResponseBody
 	public String getSales(@PathVariable("in") String input) {
-		String output = "-Denetleyici- " + salesService.performSamething(input);
+		String output = "-Denetleyici- " + salesService.performSomething(input);
+		return output;
+	}
+	
+	@GetMapping("aop/another/{in}")
+	@ResponseBody
+	public String getAnother(@PathVariable("in") String input) {
+		String output = "-Denetleyici- " + salesService.performAnother(input);
+		return output;
+	}
+	
+	@GetMapping("aop/handle/{in}")
+	@ResponseBody
+	public String getHandle(@PathVariable("in") String input) {
+		String output = "-Denetleyici- " + salesService.handleSomething(input);
 		return output;
 	}
 	
