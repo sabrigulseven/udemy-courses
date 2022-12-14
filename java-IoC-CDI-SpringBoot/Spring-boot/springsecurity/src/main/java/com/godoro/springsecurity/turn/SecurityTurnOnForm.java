@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.SecurityFilterChain;
 
 //@Configuration
-public class SecurityTurnOnBasic {
+public class SecurityTurnOnForm {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -16,6 +16,8 @@ public class SecurityTurnOnBasic {
 			.authorizeRequests()
 			.anyRequest()
 			.authenticated()
+			.and()
+		.formLogin()
 			.and()
 		.httpBasic();
 
