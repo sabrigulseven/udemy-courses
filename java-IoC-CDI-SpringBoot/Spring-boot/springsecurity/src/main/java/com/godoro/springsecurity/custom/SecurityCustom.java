@@ -24,7 +24,10 @@ public class SecurityCustom{
 			.loginPage("/login")
 			.defaultSuccessUrl("/welcome")
 			.and()
-		.httpBasic();
+		.logout()
+			.logoutSuccessUrl("/logout")
+			.invalidateHttpSession(true)
+			.permitAll();
 
 		return http.build();
 	}
