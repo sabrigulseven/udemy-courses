@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class AuthenticationController {
@@ -34,6 +35,16 @@ public class AuthenticationController {
 				.logout(request, response, authentication);
 		}
 		return "custom/LogoutPage";
+	}
+	
+	@GetMapping("/current")
+	@ResponseBody
+	public String getCurrent() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication!=null) {
+			return authentication.getName();
+		}
+		return "giriş yapılmamış";
 	}
 
 }

@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>Welcome Page</h1>
-	
+	Welcome ${username}	
+<a href="/logout">Çıkış</a>
 </body>
 </html>
