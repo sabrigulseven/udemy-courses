@@ -19,6 +19,10 @@ public class AuthorizationController {
 	public String getLow() {
 		return "low/LowPage";
 	}
+	@GetMapping("/partial")
+	public String getPartial() {
+		return "partial/PartialPage";
+	}
 	
 	@GetMapping("/currentroles")
 	@ResponseBody
