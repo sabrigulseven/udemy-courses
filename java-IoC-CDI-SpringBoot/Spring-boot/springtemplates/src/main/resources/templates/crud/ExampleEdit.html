@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/mystyles/MyStyle.css}"></link>
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>Örnek Biçimi</h1>
+	<form action="#" th:action="@{/example/edit/{id}(id=${example.exampleId})}" method="post" th:object="${example}">
+
+		<fieldset>
+			<label for="exampleId"></label>
+			<input type="text" id="exampleId" disabled="disabled" th:field="*{exampleId}" />
+		</fieldset>
+
+		<fieldset>
+			<label for="exampleName"></label>
+			<input type="text" id="exampleName" th:field="*{exampleName}" />
+		</fieldset>
+
+		<fieldset>
+			<label for="exampleValue"></label>
+			<input type="text" id="exampleValue" th:field="*{exampleValue}" />
+		</fieldset>
+
+		<input type="submit" value="sakla " />
+	</form>
+</body>
+
+</html>
