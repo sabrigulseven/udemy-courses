@@ -3,6 +3,8 @@ package com.godoro.springtemplates.crud;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,7 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ExampleController {
-
+	@Autowired
+	private MessageSource messageSource;
+	
 	@GetMapping(path = { "/example/edit", "/example/edit/{id}" })
 	public String editExample(Model model, @PathVariable(name = "id", required = false) Long exampleId) {
 		Example example;
@@ -22,7 +26,7 @@ public class ExampleController {
 		} else {
 			example = new Example(exampleId, "Örnek Ad1", 12.34);
 		}
-		model.addAttribute("message", "Biçimi Doldurun");
+		model.addAttribute("message", messageSource.getMessage("ExampleEdit.fillForm", null, null));
 		model.addAttribute("example", example);
 		return "/crud/ExampleEdit";
 	}

@@ -16,19 +16,19 @@
 			<li th:each="error : ${#fields.errors('global')}" th:text="${error}"></li>
 		</ul>
 		<fieldset>
-			<label for="exampleId"></label>
+			<label for="exampleId" th:text="#{Example.exampleId}"></label>
 			<input type="text" id="exampleId" disabled="disabled" th:field="*{exampleId}" />
 			<span th:if="${#fields.errors('exampleId')}" th:errors="*{exampleId}"></span>
 		</fieldset>
 
 		<fieldset>
-			<label for="exampleName"></label>
+			<label for="exampleName" th:text="#{Example.exampleName}"></label>
 			<input type="text" id="exampleName" th:field="*{exampleName}" />
 			<span th:if="${#fields.errors('exampleName')}" th:errors="*{exampleName}"></span>
 		</fieldset>
 
 		<fieldset>
-			<label for="exampleValue"></label>
+			<label for="exampleValue" th:text="#{Example.exampleValue}"></label>
 			<input type="text" id="exampleValue" th:field="*{exampleValue}" />
 			<span th:if="${#fields.errors('exampleValue')}" th:errors="*{exampleValue}"></span>		
 		</fieldset>
