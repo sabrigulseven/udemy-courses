@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/mystyles/MyStyle.css}"></link>
+<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>Örnek Biçimi</h1>
+	İleti:
+	<label th:text="${message}"></label>
+	<form action="#"
+		th:action="@{/example/select}"
+		method="post" th:object="${selectedExample}">
+<!-- 	
+		Seçiniz: <br>
+		<select th:field="${selectedExample.exampleId}">
+			<option 
+				th:each="example : ${exampleList}" 
+				th:value="${example.exampleId}"
+				th:text="${example.exampleName}"
+				th:selected="${example.exampleId == selectedExample.exampleId}">		
+			</option>
+		</select>
+ -->	
+ 		<input type="radio" 
+ 			th:field="${selectedExample.exampleId}"
+			th:each="example : ${exampleList}" 
+			th:value="${example.exampleId}"
+			th:text="${example.exampleName}"
+			th:checked="${example.exampleId == selectedExample.exampleId}">>
+		
+		<input type="submit" value="Sakla">		
+	</form>
+</body>
+
+</html>

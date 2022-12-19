@@ -39,4 +39,10 @@ public class Example {
 		this.exampleValue = exampleValue;
 	}
 
+	@Override
+	public String toString() {
+		return "Example [exampleId=" + exampleId + ", exampleName=" + exampleName + ", exampleValue=" + exampleValue
+				+ "]";
+	}
+
 }

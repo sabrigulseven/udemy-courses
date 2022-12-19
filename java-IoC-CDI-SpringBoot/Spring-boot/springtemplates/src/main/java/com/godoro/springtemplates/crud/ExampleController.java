@@ -55,7 +55,7 @@ public class ExampleController {
 	}
 
 	@GetMapping(value = "/example/delete/{id}")
-	public String removeExample(@PathVariable("id") long exampleId, Model model) {
+	public String deleteExample(@PathVariable("id") long exampleId, Model model) {
 		System.out.println("Siliniyor.. " + exampleId);
 		List<Example> exampleList = new ArrayList<>();
 		exampleList.add(new Example(701, "Örnek 1", 700));
@@ -66,4 +66,30 @@ public class ExampleController {
 		return "/crud/ExampleList";
 	}
 
+	@GetMapping(value = "/example/select")
+	public String selectExample(Model model) {
+		Example selectedExample = new Example(702, "", 0);
+		model.addAttribute("selectedExample", selectedExample);
+		model.addAttribute("message", "Seçilen:" + selectedExample);
+		List<Example> exampleList = new ArrayList<>();
+		exampleList.add(new Example(701, "Örnek 1", 700));
+		exampleList.add(new Example(702, "Örnek 2", 800));
+		exampleList.add(new Example(703, "Örnek 3", 900));
+		model.addAttribute("exampleList", exampleList);
+		return "/crud/ExampleSelect";
+	}
+
+	@PostMapping(value = "/example/select")
+	public String selectExample(Model model, Example selectedExample) {
+		System.out.println("Seçilen örnek: "+selectedExample);
+		model.addAttribute("selectedExample", selectedExample);
+		model.addAttribute("message", "Seçilen:" + selectedExample);
+		List<Example> exampleList = new ArrayList<>();
+		exampleList.add(new Example(701, "Örnek 1", 700));
+		exampleList.add(new Example(702, "Örnek 2", 800));
+		exampleList.add(new Example(703, "Örnek 3", 900));
+		model.addAttribute("exampleList", exampleList);
+		
+		return "/crud/ExampleSelect";
+	}
 }
