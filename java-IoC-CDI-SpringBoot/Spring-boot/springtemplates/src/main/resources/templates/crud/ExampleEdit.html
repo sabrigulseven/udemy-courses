@@ -10,7 +10,6 @@
 <body>
 	<h1>Örnek Biçimi</h1>
 	İleti: <label th:text="${message}"></label>
-	
 	<form action="#" th:action="@{/example/edit/{id}(id=${example.exampleId})}" method="post" th:object="${example}">
 		<ul>
 			<li th:each="error : ${#fields.errors('global')}" th:text="${error}"></li>
