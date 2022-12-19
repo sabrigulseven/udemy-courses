@@ -9,21 +9,28 @@
 
 <body>
 	<h1>Örnek Biçimi</h1>
+	İleti: <label th:text="${message}"></label>
+	
 	<form action="#" th:action="@{/example/edit/{id}(id=${example.exampleId})}" method="post" th:object="${example}">
-
+		<ul>
+			<li th:each="error : ${#fields.errors('global')}" th:text="${error}"></li>
+		</ul>
 		<fieldset>
 			<label for="exampleId"></label>
 			<input type="text" id="exampleId" disabled="disabled" th:field="*{exampleId}" />
+			<span th:if="${#fields.errors('exampleId')}" th:errors="*{exampleId}"></span>
 		</fieldset>
 
 		<fieldset>
 			<label for="exampleName"></label>
 			<input type="text" id="exampleName" th:field="*{exampleName}" />
+			<span th:if="${#fields.errors('exampleName')}" th:errors="*{exampleName}"></span>
 		</fieldset>
 
 		<fieldset>
 			<label for="exampleValue"></label>
 			<input type="text" id="exampleValue" th:field="*{exampleValue}" />
+			<span th:if="${#fields.errors('exampleValue')}" th:errors="*{exampleValue}"></span>		
 		</fieldset>
 
 		<input type="submit" value="sakla " />
