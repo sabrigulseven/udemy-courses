@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/mystyles/MyStyle.css}"></link>
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>Örnek Biçimi</h1>
+	İleti: <label th:text="${message}"></label>
+	
+	<table border="1">
+		<tr th:each="example: ${exampleList}">
+			<td th:text="${example.exampleId}"></td>
+			<td th:text="${example.exampleName}"></td>
+			<td th:text="${example.exampleValue}"></td>
+			<td th:if= "${example.exampleValue>800}" th:text="ÇOK"></td>
+			<td th:unless= "${example.exampleValue>800}" th:text="Az"></td>
+			<td><a th:href="@{/example/edit/{id}(id=${example.exampleId})}">Güncelle</a></td>
+			<td><a th:href="@{/example/delete/{id}(id=${example.exampleId})}">Sil</a></td> 
+		</tr>
+	</table>
+	
+	<a th:href="@{/example/edit/}">Ekle</a>
+</body>
+
+</html>
